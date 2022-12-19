@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="76f92e91b48248bfae669314ab4f5f84" Name="Diagram1">
+        <EntityTypeShape EntityType="SPSModel.CarName" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPSModel.CategoryProduct" Width="1.5" PointX="9.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPSModel.CategoryProductHome" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPSModel.CompanyName" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPSModel.ManagementUser" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPSModel.Order_details" Width="1.5" PointX="5.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPSModel.Order" Width="1.5" PointX="8" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPSModel.Product" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPSModel.ProductName" Width="1.5" PointX="12" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPSModel.Status" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPSModel.User" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPSModel.WorkshopCategory" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPSModel.WorkShopR" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="SPSModel.FK__CarName__Worksho__24B26D99" ManuallyRouted="false" />
+        <AssociationConnector Association="SPSModel.FK__ProductNa__Categ__04459E07" ManuallyRouted="false" />
+        <AssociationConnector Association="SPSModel.FK__Users__UserType__39AD8A7F" ManuallyRouted="false" />
+        <AssociationConnector Association="SPSModel.FK__Orders__StatusID__041093DD" ManuallyRouted="false" />
+        <AssociationConnector Association="SPSModel.FK__Product__Worksho__09946309" ManuallyRouted="false" />
+        <AssociationConnector Association="SPSModel.FK__WorkShopR__ID__76818E95" ManuallyRouted="false" />
+        <AssociationConnector Association="SPSModel.FK__WorkShopR__Works__69279377" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SPSModel.Payment" Width="1.5" PointX="10.375" PointY="6.75" />
+        <AssociationConnector Association="SPSModel.FK__Order_det__Works__222B06A9" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

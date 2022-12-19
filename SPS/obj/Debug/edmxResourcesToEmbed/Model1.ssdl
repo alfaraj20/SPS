@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SPSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CarName">
+    <Key>
+      <PropertyRef Name="CarNameID" />
+    </Key>
+    <Property Name="CarNameID" Type="int" Nullable="false" />
+    <Property Name="CarName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkshopCategoryID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CategoryProduct">
+    <Key>
+      <PropertyRef Name="CategoryProductID" />
+    </Key>
+    <Property Name="CategoryProductID" Type="int" Nullable="false" />
+    <Property Name="CategoryProductName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CategoryProductHome">
+    <Key>
+      <PropertyRef Name="CategoryProductHomeID" />
+    </Key>
+    <Property Name="CategoryProductHomeID" Type="int" Nullable="false" />
+    <Property Name="CategoryProductHomeName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CategoryProductID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyName">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManagementUsers">
+    <Key>
+      <PropertyRef Name="UserIDManagement" />
+    </Key>
+    <Property Name="UserIDManagement" Type="int" Nullable="false" />
+    <Property Name="UserNameManagement" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order_details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="order_id" Type="varchar" MaxLength="50" />
+    <Property Name="Pname" Type="varchar" MaxLength="50" />
+    <Property Name="Pprice" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Pqty" Type="int" />
+    <Property Name="Pimage" Type="varchar(max)" />
+    <Property Name="Date" Type="date" />
+    <Property Name="DateBuy" Type="varchar(max)" />
+    <Property Name="WorkshopID" Type="int" />
+    <Property Name="CustomerID" Type="int" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Country" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Region" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="neighborhood" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Street" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Order_id" Type="varchar" MaxLength="50" />
+    <Property Name="Name_Of_Card" Type="varchar(max)" />
+    <Property Name="Card_Number" Type="varchar" MaxLength="50" />
+    <Property Name="Exp_Month" Type="int" />
+    <Property Name="Exp_Year" Type="int" />
+    <Property Name="CVV" Type="int" />
+    <Property Name="Order_Details_id" Type="varchar" MaxLength="50" />
+    <Property Name="Datetime" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Deatalis" Type="varchar(max)" Nullable="false" />
+    <Property Name="Image" Type="varchar(max)" Nullable="false" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CarName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkshopID" Type="int" Nullable="false" />
+    <Property Name="CategoryProduct" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="CarNameID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductName">
+    <Key>
+      <PropertyRef Name="ProductNameID" />
+    </Key>
+    <Property Name="ProductNameID" Type="int" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CategoryProductID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="UserType" Type="int" Nullable="false" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="Region" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="int" />
+    <Property Name="neighborhood" Type="varchar" MaxLength="50" />
+    <Property Name="Street" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WorkshopCategory">
+    <Key>
+      <PropertyRef Name="WorkshopCategoryID" />
+    </Key>
+    <Property Name="WorkshopCategoryID" Type="int" Nullable="false" />
+    <Property Name="Category" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkShopR">
+    <Key>
+      <PropertyRef Name="WorkshopID" />
+    </Key>
+    <Property Name="WorkshopID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkshopCategoryID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Location" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="License" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Image" Type="varchar(max)" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="WorkshopCategoryName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__CarName__Worksho__24B26D99">
+    <End Role="CompanyName" Type="Self.CompanyName" Multiplicity="1" />
+    <End Role="CarName" Type="Self.CarName" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyName">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="CarName">
+        <PropertyRef Name="WorkshopCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order_det__Works__222B06A9">
+    <End Role="WorkShopR" Type="Self.WorkShopR" Multiplicity="0..1" />
+    <End Role="Order_details" Type="Self.Order_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkShopR">
+        <PropertyRef Name="WorkshopID" />
+      </Principal>
+      <Dependent Role="Order_details">
+        <PropertyRef Name="WorkshopID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__Worksho__09946309">
+    <End Role="WorkShopR" Type="Self.WorkShopR" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkShopR">
+        <PropertyRef Name="WorkshopID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="WorkshopID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductNa__Categ__04459E07">
+    <End Role="CategoryProduct" Type="Self.CategoryProduct" Multiplicity="1" />
+    <End Role="ProductName" Type="Self.ProductName" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryProduct">
+        <PropertyRef Name="CategoryProductID" />
+      </Principal>
+      <Dependent Role="ProductName">
+        <PropertyRef Name="CategoryProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__UserType__69E6AD86">
+    <End Role="ManagementUsers" Type="Self.ManagementUsers" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementUsers">
+        <PropertyRef Name="UserIDManagement" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="UserType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WorkShopR__ID__5C8CB268">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="WorkShopR" Type="Self.WorkShopR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="WorkShopR">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WorkShopR__Works__69279377">
+    <End Role="WorkshopCategory" Type="Self.WorkshopCategory" Multiplicity="1" />
+    <End Role="WorkShopR" Type="Self.WorkShopR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkshopCategory">
+        <PropertyRef Name="WorkshopCategoryID" />
+      </Principal>
+      <Dependent Role="WorkShopR">
+        <PropertyRef Name="WorkshopCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SPSModelStoreContainer">
+    <EntitySet Name="CarName" EntityType="Self.CarName" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CategoryProduct" EntityType="Self.CategoryProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CategoryProductHome" EntityType="Self.CategoryProductHome" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyName" EntityType="Self.CompanyName" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManagementUsers" EntityType="Self.ManagementUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order_details" EntityType="Self.Order_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductName" EntityType="Self.ProductName" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkshopCategory" EntityType="Self.WorkshopCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkShopR" EntityType="Self.WorkShopR" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__CarName__Worksho__24B26D99" Association="Self.FK__CarName__Worksho__24B26D99">
+      <End Role="CompanyName" EntitySet="CompanyName" />
+      <End Role="CarName" EntitySet="CarName" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order_det__Works__222B06A9" Association="Self.FK__Order_det__Works__222B06A9">
+      <End Role="WorkShopR" EntitySet="WorkShopR" />
+      <End Role="Order_details" EntitySet="Order_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__Worksho__09946309" Association="Self.FK__Product__Worksho__09946309">
+      <End Role="WorkShopR" EntitySet="WorkShopR" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductNa__Categ__04459E07" Association="Self.FK__ProductNa__Categ__04459E07">
+      <End Role="CategoryProduct" EntitySet="CategoryProduct" />
+      <End Role="ProductName" EntitySet="ProductName" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__UserType__69E6AD86" Association="Self.FK__Users__UserType__69E6AD86">
+      <End Role="ManagementUsers" EntitySet="ManagementUsers" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WorkShopR__ID__5C8CB268" Association="Self.FK__WorkShopR__ID__5C8CB268">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="WorkShopR" EntitySet="WorkShopR" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WorkShopR__Works__69279377" Association="Self.FK__WorkShopR__Works__69279377">
+      <End Role="WorkshopCategory" EntitySet="WorkshopCategory" />
+      <End Role="WorkShopR" EntitySet="WorkShopR" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

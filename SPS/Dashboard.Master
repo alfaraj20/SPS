@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.master.cs" Inherits="SPS.Dashboard" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Dashboard</title>
+    <!-- Global Template Css File -->
+    <link rel="stylesheet" href="Css/Global.css" />
+    <!-- Main Template Css File -->
+    <link rel="stylesheet" href="Css/Admin/Dashboard.css" />
+    <!-- Icons Template Css File -->
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+    <!-- Icons Template Css File -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <!-- Side Bar JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Start Css Inside -->
+    <style>
+        #menu .items li:nth-child(1) {
+            color: white;
+            border-left: 4px solid #fff;
+        }
+    </style>
+    <!-- End Css Inside -->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form" runat="server">
+        <!-- Start Side Bar -->
+        <section id="menu">
+            <div class="logo">
+                <asp:HyperLink runat="server" NavigateUrl="~/Views/Customer/Home.aspx" style="text-decoration:none;"><h2>SPS</h2></asp:HyperLink>
+            </div>
+            <div class="items">
+                <ul>
+                    <asp:LinkButton runat="server" ID="Dashboard1" PostBackUrl="~/Views/Admin/Dashboard.aspx" Style="color: rgb(255,255,255);"><li><i class="fad fa-chart-pie-alt" style="color:white;"></i>Dashboard</li></asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Views/Admin/WorkShop.aspx" Style="color: rgb(255,255,255);"><li><i class="fas fa-store" style="color:white;"></i>Workshops</li></asp:LinkButton>
+                    <asp:LinkButton ID="Workshop" runat="server" PostBackUrl="~/Views/Admin/WorkShop.aspx" Style="color: rgb(255,255,255);"><li><i class="fas fa-store" style="color:white;"></i>Workshops</li></asp:LinkButton>
+                    <asp:LinkButton ID="Products" runat="server" PostBackUrl="~/Views/Admin/Products.aspx" Style="color: rgb(255,255,255);"><li><i class="fas fa-boxes" style="color:white;"></i>Products</li></asp:LinkButton>
+                    <asp:LinkButton ID="Orders" runat="server" PostBackUrl="~/Views/Admin/Orders.aspx" Style="color: rgb(255,255,255);"><li><i class="fas fa-shopping-cart" style="color:white;"></i>Orders</li></asp:LinkButton>
+                    <asp:LinkButton ID="Customers" runat="server" PostBackUrl="~/Views/Admin/Customers.aspx" Style="color: rgb(255,255,255);"><li><i class="fas fa-users" style="color:white;"></i>Customers</li></asp:LinkButton>
+                    <asp:LinkButton OnClick="Logout_Click" ID="Logout" runat="server" Style="color: rgb(255,255,255);"><li><i class="fal fa-power-off" style="color:white;"></i>Log out</li></asp:LinkButton>
+                </ul>
+            </div>
+        </section>
+        <!-- End Side Bar -->
+
+        <!-- Start Header Content -->
+        <section id="interface">
+            <div class="navigation">
+                <div class="n1">
+                    <div>
+                        <i id="menu-btn" class="fas fa-bars"></i>
+                    </div>
+                    <div runat="server" id="search" class="search">
+                        <i class="fas fa-search"></i>
+                        <asp:TextBox runat="server" ID="search1" placeholder="Search" AutoPostBack="true" OnTextChanged="search1_TextChanged"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="profile">
+                </div>
+            </div>
+        </section>
+        <!-- End Header Content -->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+    <script>
+        $('#menu-btn').click(function () {
+            $('#menu').toggleClass("active");
+        })
+    </script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+</html>

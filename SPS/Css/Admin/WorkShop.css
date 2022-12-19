@@ -1,0 +1,443 @@
+﻿/* Start Title*/
+.title {
+    margin-left: 300px;
+    padding-top: 100px;
+    padding-right: 30px;
+    padding-bottom: 0;
+    padding-left: 30px;
+    font-size: 25px;
+}
+
+/* End Title*/
+
+/* Start Main-Container */
+.Container1 {
+    display: flex;
+    padding: 20px;
+    margin-left: 300px;
+    margin-top: 71px;
+    flex-direction: column;
+}
+
+.btn {
+    color: #fff;
+    padding: 15px 15px;
+    font-size: 22.5px;
+    background: var(--MainColor);
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    border-radius: 5%;
+}
+
+.Icon1 {
+    padding-right: 10px
+}
+
+/* Start Counter */
+
+.Counter {
+    position: relative;
+    /* padding-bottom: 16px; */
+    display: flex;
+    position: relative;
+    transform: translateY(3px);
+    visibility: hidden;
+    opacity: 1;
+    transition: visibility 0s, all 1s ease;
+}
+.Counter1 {
+    position: relative;
+    /* padding-bottom: 16px; */
+    display: flex;
+    position: relative;
+    transform: translateY(-26px);
+    visibility: hidden;
+    opacity: 1;
+    transition: visibility 0s, all 1s ease;
+}
+
+.Counter2 {
+    position: relative;
+    /* padding-bottom: 16px; */
+    display: flex;
+    position: relative;
+    transform: translateY(26px);
+    visibility: hidden;
+    opacity: 1;
+    transition: visibility 0s, all 1s ease;
+}
+
+    .Counter p {
+        padding: 8px;
+        background: rgba(89,78,247,.2);
+        border: 1px solid #594ef7;
+        border-radius: 5px;
+    }
+.Counter1 p {
+    padding: 8px;
+    background: rgba(89,78,247,.2);
+    border: 1px solid #594ef7;
+    border-radius: 5px;
+}
+
+.Counter2 p {
+    padding: 8px;
+    background: rgba(89,78,247,.2);
+    border: 1px solid #594ef7;
+    border-radius: 5px;
+}
+
+        .Counter p span {
+            display: inline-block;
+            color: #594ef7;
+        }
+.Counter1 p span {
+    display: inline-block;
+    color: #594ef7;
+}
+
+.Counter2 p span {
+    display: inline-block;
+    color: #594ef7;
+}
+
+/* End Counter */
+/* Start container Work shop */
+.Workshop {
+    display: inline-block;
+    padding: 15px 60px 15px 15px;
+    border-radius: 14px;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    max-width: 1472px;
+    height: 118px;
+    transform: translateY(3px);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, all 1s ease;
+}
+
+.Workshop2 {
+    display: inline-block;
+    padding: 15px 60px 15px 15px;
+    border-radius: 14px;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    top: -97px;
+    width: 1472px;
+    height: 165px
+}
+
+input[type=checkbox]:checked + .Workshop2 {
+    outline: 2px solid var(--MainColor);
+    border-color: none;
+}
+
+.DeleteMultiple {
+    left: 25px;
+    transform: translateY(-22.5px);
+    position: absolute;
+    z-index: 555;
+    cursor: pointer;
+}
+.DeleteMultiple1 {
+    position: relative;
+    left: 25px;
+    z-index: 1;
+}
+/* End container Work shop */
+.fa-check-circle {
+    position: relative;
+    transform: translateX(-50px);
+    padding: 10px;
+    display: none;
+}
+
+.fa-exclamation-circle {
+    position: relative;
+    transform: translateX(-90px);
+    padding: 10px;
+    display: none;
+}
+
+.btn-delete-product {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btn-delete-product {
+    position: absolute;
+    z-index: 555;
+}
+
+.btn-delete-circle {
+    background-color: white;
+    border: 1px solid var(--MainColor);
+    border-radius: 50%;
+    color: var(--MainColor);
+    height: 22px;
+    padding: 0;
+    text-align: center;
+    width: 22px;
+    cursor: pointer;
+}
+
+.TextBoxContainer {
+    width: 245px;
+}
+
+.TextBoxContainer1 {
+    width: 170px;
+}
+.textbox input {
+    outline: none;
+}
+.btn {
+    transition: background .35s cubic-bezier(.2,1,.3,1);
+}
+
+    .btn, .btn:hover {
+        box-shadow: none !important;
+    }
+
+.Image {
+    left: 50px;
+    position: relative;
+}
+
+.ImageWorkshop {
+    width: 84px;
+    height: 84px;
+}
+
+.ImageWorkshop1 {
+    width: 97px;
+    height: 97px;
+    transform: translateY(18.5px) translateX(-5px);
+}
+
+.Name {
+    bottom: 86px;
+    left: 163px;
+    position: relative;
+    width: 315px;
+}
+
+    .Name .fa-store {
+        color: var(--ThreedColor);
+        padding: 10px;
+        position: absolute;
+        transform: translateY(-37px);
+    }
+
+.NameTextBox {
+    font-size: 14px;
+    padding: 10px 35px;
+    border: 1px solid var(--ThreedColor);
+    border-radius: 4px;
+    width: 1126px;
+    height: 36px;
+    outline: none;
+}
+
+.Name input:focus {
+    border: 1px solid var(--MainColor);
+    color: var(--MainColor);
+    transition: 0.1s;
+}
+
+    .Name input:focus::placeholder {
+        color: var(--MainColor);
+        transition: 0.1s;
+    }
+
+    .Name input:focus + i {
+        color: var(--MainColor);
+        transition: 0.1s;
+    }
+
+.tools {
+    bottom: 77px;
+    left: 163px;
+    position: relative;
+    display: inline-flex;
+}
+
+    .tools i {
+        color: var(--ThreedColor);
+        margin-right: 14px;
+        transform: translateX(-200px);
+    }
+
+.textbox {
+    padding: 5px 40px;
+    border: 1px solid var(--ThreedColor);
+    border-radius: 4px;
+    height: 36px;
+    width: 210px;
+    font-size: 14px;
+    outline: none
+}
+
+.textbox1 {
+    padding: 5px 10px;
+    border: 1px solid var(--ThreedColor);
+    border-radius: 4px;
+    height: 36px;
+    width: 146px;
+    font-size: 14px;
+    outline: none;
+    position: relative;
+    right: 11px;
+    cursor: pointer;
+    transform: translateX(11px);
+}
+
+    .textbox1:focus {
+        border: 1px solid var(--MainColor);
+        color: var(--MainColor);
+        transition: 0.1s;
+    }
+
+.TextBoxContainer input:focus {
+    border: 1px solid var(--MainColor);
+    color: var(--MainColor);
+    transition: 0.1s;
+}
+
+    .TextBoxContainer input:focus::placeholder {
+        color: var(--MainColor);
+        transition: 0.1s;
+    }
+
+.textbox:focus + i {
+    color: var(--MainColor);
+    transition: 0.1s;
+}
+
+.Buttons {
+    display: inline-grid;
+    bottom: 124px;
+    left: 97px;
+    grid-gap: 9px;
+    position: relative;
+    width: 100px;
+    height: 72px;
+}
+
+.Buttons1 {
+    display: inline-grid;
+    top: 33px;
+    right: 29px;
+    grid-gap: 34px;
+    position: absolute;
+    width: 100px;
+    height: 72px;
+}
+
+.Cancel {
+    background: white;
+    color: var(--MainColor);
+    border: 2px solid var(--MainColor);
+    border-radius: 3px;
+    cursor: pointer;
+    height: 36px;
+}
+
+.Save {
+    border: none;
+    background: var(--MainColor);
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    height: 36px;
+    padding-top: 5px;
+    font-size: 15px;
+}
+
+.Save1 {
+    border: none;
+    background: var(--MainColor);
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 36px;
+}
+
+/* Start Workshop Container */
+#ContentPlaceHolder1_products_div.list {
+    grid-template-columns: repeat(auto-fill,minmax(100%,1fr));
+}
+
+#products_div {
+    grid-gap: 20px;
+}
+
+.grid-block {
+    display: grid;
+}
+
+/* End Workshop Container */
+
+/* Start Product */
+.Details {
+    width: 380px;
+    resize: none;
+    font-size: 14px;
+    padding: 5px 40px;
+    border: 1px solid var(--ThreedColor);
+    border-radius: 4px;
+    outline: none;
+    height: 36px;
+}
+
+.products_div_postion {
+    grid-template-columns: unset;
+}
+/* End Product */
+
+/* Start Orders */
+.Name1 {
+    bottom: 86px;
+    left: 163px;
+    position: relative;
+}
+
+    .Name1 .fa-boxes {
+        color: var(--ThreedColor);
+        padding: 10px;
+        position: absolute;
+        transform: translateY(-37px);
+    }
+
+.NameTextBox {
+    font-size: 14px;
+    padding: 10px 35px;
+    border: 1px solid var(--ThreedColor);
+    border-radius: 4px;
+    width: 1126px;
+    height: 36px;
+    outline: none;
+}
+
+.Name1 input:focus {
+    border: 1px solid var(--MainColor);
+    color: var(--MainColor);
+    transition: 0.1s;
+}
+
+    .Name1 input:focus::placeholder {
+        color: var(--MainColor);
+        transition: 0.1s;
+    }
+
+    .Name1 input:focus + i {
+        color: var(--MainColor);
+        transition: 0.1s;
+    }
+/* End Orders*/

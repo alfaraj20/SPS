@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SPSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CarName">
+    <Key>
+      <PropertyRef Name="CarNameID" />
+    </Key>
+    <Property Name="CarNameID" Type="Int32" Nullable="false" />
+    <Property Name="CarName1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WorkshopCategoryID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CompanyName" Relationship="Self.FK__CarName__Worksho__24B26D99" FromRole="CarName" ToRole="CompanyName" />
+  </EntityType>
+  <EntityType Name="CategoryProduct">
+    <Key>
+      <PropertyRef Name="CategoryProductID" />
+    </Key>
+    <Property Name="CategoryProductID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ProductNames" Relationship="Self.FK__ProductNa__Categ__04459E07" FromRole="CategoryProduct" ToRole="ProductName" />
+  </EntityType>
+  <EntityType Name="CategoryProductHome">
+    <Key>
+      <PropertyRef Name="CategoryProductHomeID" />
+    </Key>
+    <Property Name="CategoryProductHomeID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryProductHomeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CategoryProductID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyName">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="CompanyName1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CarNames" Relationship="Self.FK__CarName__Worksho__24B26D99" FromRole="CompanyName" ToRole="CarName" />
+  </EntityType>
+  <EntityType Name="ManagementUser">
+    <Key>
+      <PropertyRef Name="UserIDManagement" />
+    </Key>
+    <Property Name="UserIDManagement" Type="Int32" Nullable="false" />
+    <Property Name="UserNameManagement" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Users__UserType__39AD8A7F" FromRole="ManagementUsers" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Order_details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="order_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pprice" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="Pqty" Type="Int32" />
+    <Property Name="Pimage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="DateBuy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="WorkshopID" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" />
+    <NavigationProperty Name="WorkShopR" Relationship="SPSModel.FK__Order_det__Works__222B06A9" FromRole="Order_details" ToRole="WorkShopR" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Region" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="neighborhood" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Status" Relationship="Self.FK__Orders__StatusID__041093DD" FromRole="Orders" ToRole="Status" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Deatalis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CarName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WorkshopID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryProduct" Type="Int32" Nullable="false" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="CarNameID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="WorkShopR" Relationship="Self.FK__Product__Worksho__09946309" FromRole="Product" ToRole="WorkShopR" />
+  </EntityType>
+  <EntityType Name="ProductName">
+    <Key>
+      <PropertyRef Name="ProductNameID" />
+    </Key>
+    <Property Name="ProductNameID" Type="Int32" Nullable="false" />
+    <Property Name="ProductName1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CategoryProductID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CategoryProduct" Relationship="Self.FK__ProductNa__Categ__04459E07" FromRole="ProductName" ToRole="CategoryProduct" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__StatusID__041093DD" FromRole="Status" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserType" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="ManagementUser" Relationship="Self.FK__Users__UserType__39AD8A7F" FromRole="Users" ToRole="ManagementUsers" />
+    <NavigationProperty Name="WorkShopRs" Relationship="Self.FK__WorkShopR__ID__76818E95" FromRole="Users" ToRole="WorkShopR" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Region" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ZipCode" Type="Int32" />
+    <Property Name="neighborhood" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="WorkshopCategory">
+    <Key>
+      <PropertyRef Name="WorkshopCategoryID" />
+    </Key>
+    <Property Name="WorkshopCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="WorkShopRs" Relationship="Self.FK__WorkShopR__Works__69279377" FromRole="WorkshopCategory" ToRole="WorkShopR" />
+  </EntityType>
+  <EntityType Name="WorkShopR">
+    <Key>
+      <PropertyRef Name="WorkshopID" />
+    </Key>
+    <Property Name="WorkshopID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkshopCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="License" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Product__Worksho__09946309" FromRole="WorkShopR" ToRole="Product" />
+    <NavigationProperty Name="User" Relationship="Self.FK__WorkShopR__ID__76818E95" FromRole="WorkShopR" ToRole="Users" />
+    <NavigationProperty Name="WorkshopCategory" Relationship="Self.FK__WorkShopR__Works__69279377" FromRole="WorkShopR" ToRole="WorkshopCategory" />
+    <Property Name="WorkshopCategoryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Order_details" Relationship="SPSModel.FK__Order_det__Works__222B06A9" FromRole="WorkShopR" ToRole="Order_details" />
+  </EntityType>
+  <Association Name="FK__CarName__Worksho__24B26D99">
+    <End Role="CompanyName" Type="Self.CompanyName" Multiplicity="1" />
+    <End Role="CarName" Type="Self.CarName" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyName">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="CarName">
+        <PropertyRef Name="WorkshopCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductNa__Categ__04459E07">
+    <End Role="CategoryProduct" Type="Self.CategoryProduct" Multiplicity="1" />
+    <End Role="ProductName" Type="Self.ProductName" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryProduct">
+        <PropertyRef Name="CategoryProductID" />
+      </Principal>
+      <Dependent Role="ProductName">
+        <PropertyRef Name="CategoryProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__UserType__39AD8A7F">
+    <End Role="ManagementUsers" Type="Self.ManagementUser" Multiplicity="1" />
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementUsers">
+        <PropertyRef Name="UserIDManagement" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="UserType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__StatusID__041093DD">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__Worksho__09946309">
+    <End Role="WorkShopR" Type="Self.WorkShopR" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkShopR">
+        <PropertyRef Name="WorkshopID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="WorkshopID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WorkShopR__ID__76818E95">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="WorkShopR" Type="Self.WorkShopR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="WorkShopR">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WorkShopR__Works__69279377">
+    <End Role="WorkshopCategory" Type="Self.WorkshopCategory" Multiplicity="1" />
+    <End Role="WorkShopR" Type="Self.WorkShopR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkshopCategory">
+        <PropertyRef Name="WorkshopCategoryID" />
+      </Principal>
+      <Dependent Role="WorkShopR">
+        <PropertyRef Name="WorkshopCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SpsTabels" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CarNames" EntityType="Self.CarName" />
+    <EntitySet Name="CategoryProducts" EntityType="Self.CategoryProduct" />
+    <EntitySet Name="CategoryProductHomes" EntityType="Self.CategoryProductHome" />
+    <EntitySet Name="CompanyNames" EntityType="Self.CompanyName" />
+    <EntitySet Name="ManagementUsers" EntityType="Self.ManagementUser" />
+    <EntitySet Name="Order_details" EntityType="Self.Order_details" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="ProductNames" EntityType="Self.ProductName" />
+    <EntitySet Name="Status" EntityType="Self.Status" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="WorkshopCategories" EntityType="Self.WorkshopCategory" />
+    <EntitySet Name="WorkShopRs" EntityType="Self.WorkShopR" />
+    <AssociationSet Name="FK__CarName__Worksho__24B26D99" Association="Self.FK__CarName__Worksho__24B26D99">
+      <End Role="CompanyName" EntitySet="CompanyNames" />
+      <End Role="CarName" EntitySet="CarNames" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductNa__Categ__04459E07" Association="Self.FK__ProductNa__Categ__04459E07">
+      <End Role="CategoryProduct" EntitySet="CategoryProducts" />
+      <End Role="ProductName" EntitySet="ProductNames" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__UserType__39AD8A7F" Association="Self.FK__Users__UserType__39AD8A7F">
+      <End Role="ManagementUsers" EntitySet="ManagementUsers" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__StatusID__041093DD" Association="Self.FK__Orders__StatusID__041093DD">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__Worksho__09946309" Association="Self.FK__Product__Worksho__09946309">
+      <End Role="WorkShopR" EntitySet="WorkShopRs" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WorkShopR__ID__76818E95" Association="Self.FK__WorkShopR__ID__76818E95">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="WorkShopR" EntitySet="WorkShopRs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WorkShopR__Works__69279377" Association="Self.FK__WorkShopR__Works__69279377">
+      <End Role="WorkshopCategory" EntitySet="WorkshopCategories" />
+      <End Role="WorkShopR" EntitySet="WorkShopRs" />
+    </AssociationSet>
+    <EntitySet Name="Payments" EntityType="SPSModel.Payment" />
+    <AssociationSet Name="FK__Order_det__Works__222B06A9" Association="SPSModel.FK__Order_det__Works__222B06A9">
+      <End Role="WorkShopR" EntitySet="WorkShopRs" />
+      <End Role="Order_details" EntitySet="Order_details" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Order_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name_Of_Card" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Card_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Exp_Month" Type="Int32" />
+    <Property Name="Exp_Year" Type="Int32" />
+    <Property Name="CVV" Type="Int32" />
+    <Property Name="Order_Details_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Datetime" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__Order_det__Works__222B06A9">
+    <End Type="SPSModel.WorkShopR" Role="WorkShopR" Multiplicity="0..1" />
+    <End Type="SPSModel.Order_details" Role="Order_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkShopR">
+        <PropertyRef Name="WorkshopID" />
+      </Principal>
+      <Dependent Role="Order_details">
+        <PropertyRef Name="WorkshopID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,169 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+.container{
+  height: 350px;
+  width: 430px;
+  position: relative;
+}
+.container .wrapper{
+  position: relative;
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
+  background: #fff;
+  border: 2px dashed #c2cdda;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.wrapper.active{
+  border: none;
+}
+.wrapper .image{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: initial;
+}
+.wrapper .icon{
+  font-size: 100px;
+  color: #9658fe;
+}
+.wrapper .text{
+  font-size: 20px;
+  font-weight: 500;
+  color: #5B5B7B;
+}
+.wrapper #Cancel-btn i{
+  position: absolute;
+  font-size: 20px;
+  right: 15px;
+  top: 15px;
+  color: #9658fe;
+  cursor: pointer;
+  display: none;
+}
+.wrapper.active:hover #Cancel-btn i{
+  display: block;
+}
+.wrapper #Cancel-btn i:hover{
+  color: #e74c3c;
+}
+.wrapper .file-name{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 8px 0;
+  font-size: 18px;
+  color: #fff;
+  display: none;
+  background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+}
+.wrapper.active:hover .file-name{
+  display: block;
+}
+.container #ContentPlaceHolder1_FileUploadBtn1 {
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: var(--MainColor);
+}
+
+.container {
+    position: relative;
+    left: 80px;
+    padding: 20px;
+}
+
+.content {
+    text-align: center;
+}
+
+#cancel-btn {
+    align-self: flex-start;
+    left: 85px ;
+    position: relative;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--MainColor);
+    position: relative;
+    top: 155px;
+    text-align-last: start;
+}
+
+.CancelBtn {
+    background: white;
+    width: 100px;
+    height: 40px;
+    color: var(--MainColor);
+    text-align-last: center;
+    border-radius: 5px;
+    border: 2px solid var(--MainColor);
+    cursor:pointer;
+}
+
+.hide {
+    display: none;
+}
+
+/* Start Sweet Alert MSg */
+
+.swal-button {
+    background-color: var(--MainColor);
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 24px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.swal-button:not([disabled]):hover {
+  background: var(--MainColor);
+}
+
+.swal-icon--success__line {
+    height: 5px;
+    background-color: var(--MainColor);
+    display: block;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 2;
+}
+
+.swal-icon--success__ring {
+    width: 80px;
+    height: 80px;
+    border: 4px solid hsl(238deg 43% 61%);
+    border-radius: 50%;
+    box-sizing: content-box;
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    z-index: 2;
+}
+
+/* End Sweet Alert MSg */

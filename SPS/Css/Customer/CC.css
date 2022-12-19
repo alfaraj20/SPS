@@ -1,0 +1,85 @@
+﻿.cart-page {
+    margin: 80px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+th {
+    text-align: left;
+    padding: 5px;
+    color: #fff;
+    background: var(--MainColor);
+    font-weight: normal;
+}
+
+td {
+    padding: 10px 5px;
+}
+
+    td input {
+        width: 40px;
+        height: 30px;
+        padding: 5px;
+    }
+
+    td .btn-2 {
+        color: blue;
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    td img {
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+    }
+
+.total-price {
+    display: flex;
+    justify-content: flex-end;
+}
+
+    .total-price table {
+        border-top: 3px solid var(--MainColor);
+        width: 100%;
+        max-width: 370px;
+    }
+
+.btn1-ev {
+    margin: 20px;
+    font: inherit;
+    background: var(--MainColor);
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 32px;
+    font-weight: 700;
+    border-radius: 8px;
+    transition-timing-function: cubic-bezier(.15,0,.1,1);
+    padding: 0 20px 3px;
+    border: 0;
+    height: 48px;
+    width: 70%;
+    font-size: 16px;
+    font-weight: 700;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: opacity .3s ease-in;
+}
+
+
+.btn-1 {
+    margin-left: 73%;
+    padding: 15px;
+}

@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SPSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkshopID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Orders__ProductI__398D8EEE" FromRole="Orders" ToRole="Product" />
+    <NavigationProperty Name="Status" Relationship="Self.FK__Orders__StatusID__3A81B327" FromRole="Orders" ToRole="Status" />
+    <NavigationProperty Name="WorkShop" Relationship="Self.FK__Orders__Workshop__73BA3083" FromRole="Orders" ToRole="WorkShop" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Deatalis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__ProductI__398D8EEE" FromRole="Product" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__StatusID__3A81B327" FromRole="Status" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserType" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkShop">
+    <Key>
+      <PropertyRef Name="WorkshopID" />
+    </Key>
+    <Property Name="WorkshopID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkshopCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="License" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Workshop__73BA3083" FromRole="WorkShop" ToRole="Orders" />
+    <NavigationProperty Name="WorkshopCategory" Relationship="Self.FK__WorkShop__Worksh__09746778" FromRole="WorkShop" ToRole="WorkshopCategory" />
+  </EntityType>
+  <EntityType Name="WorkshopCategory">
+    <Key>
+      <PropertyRef Name="WorkshopCategoryID" />
+    </Key>
+    <Property Name="WorkshopCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="WorkShops" Relationship="Self.FK__WorkShop__Worksh__09746778" FromRole="WorkshopCategory" ToRole="WorkShop" />
+    <NavigationProperty Name="WorkShopRs" Relationship="Self.FK__WorkShopR__Works__32767D0B" FromRole="WorkshopCategory" ToRole="WorkShopR" />
+  </EntityType>
+  <EntityType Name="WorkShopR">
+    <Key>
+      <PropertyRef Name="WorkshopID" />
+    </Key>
+    <Property Name="WorkshopID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkshopCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="License" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="WorkshopCategory" Relationship="Self.FK__WorkShopR__Works__32767D0B" FromRole="WorkShopR" ToRole="WorkshopCategory" />
+  </EntityType>
+  <Association Name="FK__Orders__ProductI__398D8EEE">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__StatusID__3A81B327">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__Workshop__73BA3083">
+    <End Role="WorkShop" Type="Self.WorkShop" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkShop">
+        <PropertyRef Name="WorkshopID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="WorkshopID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WorkShop__Worksh__09746778">
+    <End Role="WorkshopCategory" Type="Self.WorkshopCategory" Multiplicity="1" />
+    <End Role="WorkShop" Type="Self.WorkShop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkshopCategory">
+        <PropertyRef Name="WorkshopCategoryID" />
+      </Principal>
+      <Dependent Role="WorkShop">
+        <PropertyRef Name="WorkshopCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WorkShopR__Works__32767D0B">
+    <End Role="WorkshopCategory" Type="Self.WorkshopCategory" Multiplicity="1" />
+    <End Role="WorkShopR" Type="Self.WorkShopR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkshopCategory">
+        <PropertyRef Name="WorkshopCategoryID" />
+      </Principal>
+      <Dependent Role="WorkShopR">
+        <PropertyRef Name="WorkshopCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SPSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Status" EntityType="Self.Status" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="WorkShops" EntityType="Self.WorkShop" />
+    <EntitySet Name="WorkshopCategories" EntityType="Self.WorkshopCategory" />
+    <EntitySet Name="WorkShopRs" EntityType="Self.WorkShopR" />
+    <AssociationSet Name="FK__Orders__ProductI__398D8EEE" Association="Self.FK__Orders__ProductI__398D8EEE">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__StatusID__3A81B327" Association="Self.FK__Orders__StatusID__3A81B327">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__Workshop__73BA3083" Association="Self.FK__Orders__Workshop__73BA3083">
+      <End Role="WorkShop" EntitySet="WorkShops" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WorkShop__Worksh__09746778" Association="Self.FK__WorkShop__Worksh__09746778">
+      <End Role="WorkshopCategory" EntitySet="WorkshopCategories" />
+      <End Role="WorkShop" EntitySet="WorkShops" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WorkShopR__Works__32767D0B" Association="Self.FK__WorkShopR__Works__32767D0B">
+      <End Role="WorkshopCategory" EntitySet="WorkshopCategories" />
+      <End Role="WorkShopR" EntitySet="WorkShopRs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

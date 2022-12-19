@@ -1,0 +1,57 @@
+﻿/* Start Global Rules */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --MainColor: #594ef7;
+    --SecondaryColor: white;
+    --ThreedColor: #3c3c3c;
+    --TextGrey: #8390A2;
+    --SectionPadding: 60px;
+    --SectionBackground: #f6f6f6;
+    --h1: 32px;
+    --h2: 24px;
+    --h3: 18.72px;
+    --h4: 16px;
+    --p: 16px;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+}
+
+.Container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+
+@media (min-width: 768px) {
+    .Container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+
+@media (min-width: 992px) {
+    .Container {
+        width: 970px;
+    }
+}
+
+/* Large */
+
+@media (min-width: 1200px) {
+    .Container {
+        width: 1170px;
+    }
+}
+/* End Global Rules */

@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HeaderAndFooter.master.cs" Inherits="SPS.HeaderAndFooter" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <!-- Global Template Css File -->
+    <link rel="stylesheet" href="Css/Global.css" />
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="Css/Normalize.css" />
+    <!-- Main Template Css File -->
+    <link rel="stylesheet" href="Css/Customer/HeaderAndFooter.css" />
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="Css/Normalize.css" />
+    <!-- Iconscout CSS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Icons Template Css File -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar">
+            <div class="nav">
+                <asp:HyperLink runat="server" NavigateUrl="~/Views/Customer/Home.aspx" style="text-decoration:none;"><h1 style="color:var(--MainColor)">SPS</h1></asp:HyperLink>
+                <div class="nav-items">
+                    <div class="search">
+                        <asp:TextBox runat="server" ID="search" CssClass="search-box" placeholder="search brand, product" AutoPostBack="true"></asp:TextBox>
+                        <asp:Button runat="server" ID="searchbtn1" CssClass="search-btn" Text="search" />
+                    </div>
+                    <asp:LinkButton runat="server" ID="Login" class="link" PostBackUrl="~/Views/Customer/LoginRegistration.aspx" Style="text-decoration:none;"><i class="fas fa-user-circle" style="font-size: 30px;"></i></asp:LinkButton>
+                    <asp:LinkButton runat="server" ID="Logout" OnClick="LogoutBtn" class="link" Style="text-decoration:none;"><i class="fal fa-power-off" style="font-size: 30px;"></i></asp:LinkButton>
+                    <asp:LinkButton runat="server" ID="Cart" OnClick="MoveToCart" class="link" Style="text-decoration:none;"><i class="fas fa-shopping-cart" style="font-size:25px;"></i></asp:LinkButton></><asp:Label ID="cartcount" runat="server" Text="0"></asp:Label>
+                </div>
+            </div>
+        </nav>
+        <ul class="links-container" style="width:100%;">
+            <li class="link-item"><asp:LinkButton runat="server" Text="Home" class="link" PostBackUrl="~/Views/Customer/Home.aspx" Style="text-decoration:none;"></asp:LinkButton></li>
+            <li class="link-item"><asp:LinkButton runat="server" Text="Workshops" class="link" PostBackUrl="~/Views/Customer/WorkShopPage.aspx" Style="text-decoration:none;"></asp:LinkButton></li>
+            <li class="link-item"><asp:LinkButton runat="server" Text="Bumpers, grilles and facade" class="link" PostBackUrl="~/Views/Customer/Bumpersgrillesandfacade.aspx" Style="text-decoration:none;"></asp:LinkButton></li>
+            <li class="link-item"><asp:LinkButton runat="server" Text="Machines, gears and accessories" class="link" PostBackUrl="~/Views/Customer/Machinesgearsandaccessories.aspx" Style="text-decoration:none;"></asp:LinkButton></li>
+            <li class="link-item"><asp:LinkButton runat="server" Text="Doors, fender and hood" class="link" PostBackUrl="~/Views/Customer/Doorsfenderandhood.aspx" Style="text-decoration:none;"></asp:LinkButton></li>
+            <li class="link-item"><asp:LinkButton runat="server" Text="Brakes and fabrics" class="link" PostBackUrl="~/Views/Customer/Brakesandfabrics.aspx" Style="text-decoration:none;"></asp:LinkButton></li>
+            <li class="link-item"><asp:LinkButton runat="server" Text="Candles and Stabilizers (Lighting)" class="link" PostBackUrl="~/Views/Customer/CandlesandStabilizers(Lighting).aspx" Style="text-decoration:none;"></asp:LinkButton></li>
+            <li class="link-item"><asp:LinkButton runat="server" ID="Dashboard" Text="Dashboard" class="link" PostBackUrl="~/Views/Admin/Dashboard.aspx" Style="text-decoration:none;"></asp:LinkButton></li>
+            <li class="link-item"><asp:LinkButton runat="server" ID="CustomerOrders" Text="Orders" class="link" PostBackUrl="~/Views/Customer/CustomerOrders.aspx" Style="text-decoration:none;"></asp:LinkButton></li>
+        </ul>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

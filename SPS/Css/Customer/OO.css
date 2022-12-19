@@ -1,0 +1,120 @@
+﻿.Container {
+    padding: 0 50px 65px;
+    box-sizing: border-box;
+    max-width: 2035px;
+    width: 85%;
+    margin: 105px;
+    margin-left: 55%
+}
+
+img {
+    text-align: center;
+    height: 100%;
+    object-fit: scale-down;
+    margin: 33px 5px -61px 21px;
+    margin-left: 270%;
+}
+
+.left {
+    width: 50%;
+}
+
+
+.name-ev {
+    font-size: 22px;
+    font-weight: 600;
+    list-style-type: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    color: #0e0633;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 10px 10px 10px 10px;
+}
+
+.deatalis-ev {
+    font-size: 22px;
+    font-weight: 600;
+    list-style-type: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    color: #0e0633;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 10px 10px 10px 10px;
+}
+
+.price-ev {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #0e0633;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 10px 10px 10px 10px;
+}
+
+.quantity-ev {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 10px;
+    font-family: sst arabic roman,-apple-system,BlinkMacSystemFont,segoe ui,roboto,oxygen,ubuntu,cantarell,fira sans,droid sans,helvetica neue,sans-serif;
+    list-style-type: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    color: #0e0633;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 10px 10px 10px 10px;
+}
+
+table {
+    font-family: sst arabic roman,-apple-system,BlinkMacSystemFont,segoe ui,roboto,oxygen,ubuntu,cantarell,fira sans,droid sans,helvetica neue,sans-serif;
+    list-style-type: none;
+    cursor: pointer;
+    margin: 0;
+    color: #0e0633;
+    font-size: 18px;
+    line-height: 10px;
+    padding: 10px 10px 10px 10px;
+}
+
+.add-ev {
+    outline: none !important;
+    font: inherit;
+    background-color: rgb(43, 76, 215);
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 32px;
+    border-radius: 8px;
+    padding: 0 20px 3px;
+    border: 0;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 700;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: opacity .3s ease-in;
+    margin-top: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.slider-data {
+}
+
+.Control {
+    margin-Left: 31%;
+    margin-top: -26%
+}
+
+.dd2-ev {
+    margin: -11px 0 0 0;
+    padding: 4px 6px 4px 7px;
+}

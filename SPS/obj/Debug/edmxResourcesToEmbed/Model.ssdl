@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SPSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkshopID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Deatalis" Type="varchar(max)" Nullable="false" />
+    <Property Name="Image" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkShop">
+    <Key>
+      <PropertyRef Name="WorkshopID" />
+    </Key>
+    <Property Name="WorkshopID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkshopCategoryID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Location" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="License" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Image" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkshopCategory">
+    <Key>
+      <PropertyRef Name="WorkshopCategoryID" />
+    </Key>
+    <Property Name="WorkshopCategoryID" Type="int" Nullable="false" />
+    <Property Name="Category" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkShopR">
+    <Key>
+      <PropertyRef Name="WorkshopID" />
+    </Key>
+    <Property Name="WorkshopID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkshopCategoryID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Location" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="License" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Image" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Orders__ProductI__398D8EEE">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__StatusID__3A81B327">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__Workshop__73BA3083">
+    <End Role="WorkShop" Type="Self.WorkShop" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkShop">
+        <PropertyRef Name="WorkshopID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="WorkshopID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WorkShop__Worksh__09746778">
+    <End Role="WorkshopCategory" Type="Self.WorkshopCategory" Multiplicity="1" />
+    <End Role="WorkShop" Type="Self.WorkShop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkshopCategory">
+        <PropertyRef Name="WorkshopCategoryID" />
+      </Principal>
+      <Dependent Role="WorkShop">
+        <PropertyRef Name="WorkshopCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WorkShopR__Works__32767D0B">
+    <End Role="WorkshopCategory" Type="Self.WorkshopCategory" Multiplicity="1" />
+    <End Role="WorkShopR" Type="Self.WorkShopR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkshopCategory">
+        <PropertyRef Name="WorkshopCategoryID" />
+      </Principal>
+      <Dependent Role="WorkShopR">
+        <PropertyRef Name="WorkshopCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SPSModelStoreContainer">
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkShop" EntityType="Self.WorkShop" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkshopCategory" EntityType="Self.WorkshopCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkShopR" EntityType="Self.WorkShopR" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Orders__ProductI__398D8EEE" Association="Self.FK__Orders__ProductI__398D8EEE">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__StatusID__3A81B327" Association="Self.FK__Orders__StatusID__3A81B327">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__Workshop__73BA3083" Association="Self.FK__Orders__Workshop__73BA3083">
+      <End Role="WorkShop" EntitySet="WorkShop" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WorkShop__Worksh__09746778" Association="Self.FK__WorkShop__Worksh__09746778">
+      <End Role="WorkshopCategory" EntitySet="WorkshopCategory" />
+      <End Role="WorkShop" EntitySet="WorkShop" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WorkShopR__Works__32767D0B" Association="Self.FK__WorkShopR__Works__32767D0B">
+      <End Role="WorkshopCategory" EntitySet="WorkshopCategory" />
+      <End Role="WorkShopR" EntitySet="WorkShopR" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SPSModelStoreContainer" CdmEntityContainer="SpsTabels">
+    <EntitySetMapping Name="CarNames">
+      <EntityTypeMapping TypeName="SPSModel.CarName">
+        <MappingFragment StoreEntitySet="CarName">
+          <ScalarProperty Name="CarNameID" ColumnName="CarNameID" />
+          <ScalarProperty Name="CarName1" ColumnName="CarName" />
+          <ScalarProperty Name="WorkshopCategoryID" ColumnName="WorkshopCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoryProducts">
+      <EntityTypeMapping TypeName="SPSModel.CategoryProduct">
+        <MappingFragment StoreEntitySet="CategoryProduct">
+          <ScalarProperty Name="CategoryProductID" ColumnName="CategoryProductID" />
+          <ScalarProperty Name="CategoryProductName" ColumnName="CategoryProductName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoryProductHomes">
+      <EntityTypeMapping TypeName="SPSModel.CategoryProductHome">
+        <MappingFragment StoreEntitySet="CategoryProductHome">
+          <ScalarProperty Name="CategoryProductHomeID" ColumnName="CategoryProductHomeID" />
+          <ScalarProperty Name="CategoryProductHomeName" ColumnName="CategoryProductHomeName" />
+          <ScalarProperty Name="CategoryProductID" ColumnName="CategoryProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyNames">
+      <EntityTypeMapping TypeName="SPSModel.CompanyName">
+        <MappingFragment StoreEntitySet="CompanyName">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName1" ColumnName="CompanyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManagementUsers">
+      <EntityTypeMapping TypeName="SPSModel.ManagementUser">
+        <MappingFragment StoreEntitySet="ManagementUsers">
+          <ScalarProperty Name="UserIDManagement" ColumnName="UserIDManagement" />
+          <ScalarProperty Name="UserNameManagement" ColumnName="UserNameManagement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_details">
+      <EntityTypeMapping TypeName="SPSModel.Order_details">
+        <MappingFragment StoreEntitySet="Order_details">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="WorkshopID" ColumnName="WorkshopID" />
+          <ScalarProperty Name="DateBuy" ColumnName="DateBuy" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="Pname" ColumnName="Pname" />
+          <ScalarProperty Name="Pprice" ColumnName="Pprice" />
+          <ScalarProperty Name="Pqty" ColumnName="Pqty" />
+          <ScalarProperty Name="Pimage" ColumnName="Pimage" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="SPSModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="neighborhood" ColumnName="neighborhood" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="SPSModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Deatalis" ColumnName="Deatalis" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CarName" ColumnName="CarName" />
+          <ScalarProperty Name="WorkshopID" ColumnName="WorkshopID" />
+          <ScalarProperty Name="CategoryProduct" ColumnName="CategoryProduct" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CarNameID" ColumnName="CarNameID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductNames">
+      <EntityTypeMapping TypeName="SPSModel.ProductName">
+        <MappingFragment StoreEntitySet="ProductName">
+          <ScalarProperty Name="ProductNameID" ColumnName="ProductNameID" />
+          <ScalarProperty Name="ProductName1" ColumnName="ProductName" />
+          <ScalarProperty Name="CategoryProductID" ColumnName="CategoryProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="SPSModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="SPSModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="neighborhood" ColumnName="neighborhood" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkshopCategories">
+      <EntityTypeMapping TypeName="SPSModel.WorkshopCategory">
+        <MappingFragment StoreEntitySet="WorkshopCategory">
+          <ScalarProperty Name="WorkshopCategoryID" ColumnName="WorkshopCategoryID" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkShopRs">
+      <EntityTypeMapping TypeName="SPSModel.WorkShopR">
+        <MappingFragment StoreEntitySet="WorkShopR">
+          <ScalarProperty Name="WorkshopCategoryName" ColumnName="WorkshopCategoryName" />
+          <ScalarProperty Name="WorkshopID" ColumnName="WorkshopID" />
+          <ScalarProperty Name="WorkshopCategoryID" ColumnName="WorkshopCategoryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="License" ColumnName="License" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="SPSModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+          <ScalarProperty Name="Order_Details_id" ColumnName="Order_Details_id" />
+          <ScalarProperty Name="CVV" ColumnName="CVV" />
+          <ScalarProperty Name="Exp_Year" ColumnName="Exp_Year" />
+          <ScalarProperty Name="Exp_Month" ColumnName="Exp_Month" />
+          <ScalarProperty Name="Card_Number" ColumnName="Card_Number" />
+          <ScalarProperty Name="Name_Of_Card" ColumnName="Name_Of_Card" />
+          <ScalarProperty Name="Order_id" ColumnName="Order_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
